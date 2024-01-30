@@ -1,0 +1,845 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="951.2,12969.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p1="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p10="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:p2="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p3="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p6="http://schemas.uipath.com/workflow/activities/intelligentocr/training" xmlns:p7="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p8="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p9="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:upat="clr-namespace:UiPath.Persistence.Activities.Tasks;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.TaxonomyManagement</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Digitization</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Classification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>UiPath.SmartData.PositionBasedExtraction.Storage</x:String>
+      <x:String>UiPath.DocumentUnderstanding.ML.Activities</x:String>
+      <x:String>UiPath.DocumentUnderstanding.ML.Activities.Editors</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.ValidationStation</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Training</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Training</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Actions</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities</x:String>
+      <x:String>UiPath.Persistence.Activities.Tasks</x:String>
+      <x:String>UiPath.Persistence.Activities.Model.Task</x:String>
+      <x:String>UiPath.Persistence.Activities</x:String>
+      <x:String>UiPath.PDF.Activities.PDF</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.SmartData.PositionBasedExtraction</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="961.6,12904.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="p10:DocumentTaxonomy" Name="taxonomy" />
+      <Variable x:TypeArguments="x:String" Name="strDocumentText" />
+      <Variable x:TypeArguments="x:String" Name="str_抽出器環境" />
+      <Variable x:TypeArguments="p:ExtractionResult" Name="ExtractionValidatedResults" />
+      <Variable x:TypeArguments="sd2:DataSet" Name="dataset_extractions" />
+      <Variable x:TypeArguments="p1:DocumentValidationActionData" Name="ActionResult" />
+      <Variable x:TypeArguments="scg:IList(p1:DocumentValidationActionData)" Default="[new List(Of DocumentValidationActionData)]" Name="IlstActionResult" />
+      <Variable x:TypeArguments="scg:IList(p:ExtractionResult)" Name="IlistExtractionValidatedResults" />
+      <Variable x:TypeArguments="x:String" Name="strOutputFileName" />
+      <Variable x:TypeArguments="x:String" Name="strAPIkey">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment DisplayName="注意" sap:VirtualizedContainerService.HintSize="899.2,113.6" sap2010:WorkflowViewState.IdRef="Comment_3" Text="`AcitonCenter操作系アクティビティを使用する場合、プロジェクト名に日本語を使用することはできない（エラーになる）&#xA;2023/12時点`" />
+    <ui:Comment DisplayName="必要なパッケージ" sap:VirtualizedContainerService.HintSize="899.2,344.8" sap2010:WorkflowViewState.IdRef="Comment_4" Text="`Document Understandingを利用するには以下2つのパッケージをインストールする必要がある。&#xA;・UiPath.Intelligent OCR&#xA;・UiPath.DocumentUnderstanding.ML. Actvities`&#xA;&#xA;`DU検証時に使用したもの：&#xA;UiPath.DocumentUnderstanding.ML.Activities: 1.21.3&#xA;UiPath.IntelligentOCR.Activities: 6.9.5&#xA;UiPath.PDF.Activities: 3.14.1&#xA;UiPath.Persistence.Activities: 1.4.8`&#xA;&#xA;`エラー報告あり、使用不可&#xA; UiPath.IntelligentOCR.Activities:  6.14.1&#xA;2023/12時点`" />
+    <ui:Comment DisplayName="プロジェクト設定" sap:VirtualizedContainerService.HintSize="899.2,113.6" sap2010:WorkflowViewState.IdRef="Comment_5" Text="`永続性をサポートをOnにする&#xA;（ActionCenterを使うために必要な検証系アクティビティ（UiPath.Persistence.Activities）を使用するために必要）`" />
+    <ui:Comment DisplayName="このサンプルフローの概要" sap:VirtualizedContainerService.HintSize="899.2,152" sap2010:WorkflowViewState.IdRef="Comment_6" Text="`Inputファイル：「フォルダ内繰り返し」アクティビティ内部にあるファイル&#xA;Outputファイル：DU結果をExcelでData\Outputフォルダに生成&#xA;&#xA;※検証アクションはローカルかActionCenterか選択できる`" />
+    <ui:InputDialog Options="{x:Null}" sap2010:Annotation.AnnotationText="検証器をローカルにするか、Action Centerにするかをダイアログで選択" DisplayName="入力ダイアログ" sap:VirtualizedContainerService.HintSize="899.2,339.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="抽出器を実行する環境を選択してください" OptionsString="ローカル;Action Center" Title="抽出器環境選択">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[str_抽出器環境]</OutArgument>
+      </ui:InputDialog.Result>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InputDialog>
+    <ui:IfElseIf sap2010:Annotation.AnnotationText="検証アクションの配列格納用" DisplayName="条件分岐 (else if)" sap:VirtualizedContainerService.HintSize="899.2,533.6" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
+      <ui:IfElseIf.ConditionBlocks>
+        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+          <ui:IfElseIfBlock BlockType="If" Condition="[str_抽出器環境=&quot;ローカル&quot;]">
+            <ui:IfElseIfBlock.Then>
+              <ui:CreateList x:TypeArguments="p:ExtractionResult" DisplayName="CreateList&lt;ExtractionResult&gt;" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="CreateList`1_6" NewList="[IlistExtractionValidatedResults]" />
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="Else">
+            <ui:IfElseIfBlock.Then>
+              <ui:CreateList x:TypeArguments="p1:DocumentValidationActionData" DisplayName="リストを作成" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="CreateList`1_5" NewList="[IlstActionResult]" />
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+        </sc:BindingList>
+      </ui:IfElseIf.ConditionBlocks>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:IfElseIf>
+    <p1:LoadTaxonomy sap2010:Annotation.AnnotationText="Documentの分類を読み込む" DisplayName="タクソノミーを読み込み" sap:VirtualizedContainerService.HintSize="899.2,136.8" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_1" Taxonomy="[taxonomy]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p1:LoadTaxonomy>
+    <ui:ForEachFileX sap2010:Annotation.AnnotationText="For Each Fileアクティビティのファイル変数＋関数[CurrentFile.FullName]は[ドキュメント検証アクション完了まで待機し再開]アクティビティでエラーとなる（UiPathのバグ）。そのため、「検証センターへ送るまで」と「検証センターから」の繰り返しは分ける。「検証センターから」の繰り返しを並列にすると効率的に処理できる（「検証センターに送った順」と無関係に処理再開できるため）&#xA;&#xA;" DisplayName="For Each File" Folder="Data\Input" sap:VirtualizedContainerService.HintSize="899.2,7678.4" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX.Body>
+        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+          </ActivityAction.Argument2>
+          <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="865.6,7323.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="p5:Document" Name="dom" />
+              <Variable x:TypeArguments="p:ClassificationResult[]" Name="classficationResults" />
+              <Variable x:TypeArguments="p:ExtractionResult" Name="extractionResults" />
+              <Variable x:TypeArguments="p:ClassificationResult[]" Name="classficationValidatedResults" />
+              <Variable x:TypeArguments="x:Int32" Name="int_PDFpages" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <upap:GetPDFPageCount sap2010:Annotation.AnnotationText="ユニット数消費モニタリングをする場合に使用&#xA;&#xA;出力&#xA;ページ数：int_PDFpages&#xA;&#xA;UiPath.PDF.Activitiesパッケージをインストールする必要がある&#xA;UiPath.IntellgentOCR.ActivitiesとUiPath.DocumentUnderstanding.ML.Activitiesと依存関係があるため、互いのバージョンに注意する&#xA;（パッケージの説明欄に記載されているのでそちらを参照）" DisplayName="PDF のページ数を取得" FileName="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="803.2,271.2" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" PageCount="[int_PDFpages]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </upap:GetPDFPageCount>
+            <p1:DigitizeDocument sap2010:Annotation.AnnotationText="APIキーは自動設定される（UiPath Cloudと接続している場合）&#xA;&#xA;が、実際はOCのアセットに設定するのがよい&#xA;（テナント外にフロー共有する場合や、APIキー切り替えに備えて）&#xA;&#xA;出力値&#xA;Document Text：テキスト情報&#xA;Object Model：ページ数、回転、言語、あるいは単語の位置の座標などの情報を含むもので、見られないが必要な情報&#xA;&#xA;プロパティ&#xA;並列度は並列処理の度合い。使用可能なCIPコア数から1引いた数のページの並行処理が可能で、デフォルトではその指定（-1）になっている。正の値を指定するとその特定の数のコア数で動作。" ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="ドキュメントをデジタル化" DocumentObjectModel="[dom]" DocumentPath="[CurrentFile.FullName]" DocumentText="[strDocumentText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="803.2,644" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
+              <p1:DigitizeDocument.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                  <ActivityFunc.Argument1>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument1>
+                  <ActivityFunc.Argument2>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                  </ActivityFunc.Argument2>
+                  <p2:CjkOCR Output="{x:Null}" Text="{x:Null}" sap2010:Annotation.AnnotationText="日本語OCRのエンドポイント&#xA;https://du-jp.uipath.com/cjk-ocr" ApiKey="[strAPIkey]" ComputeSkewAngle="False" DisplayName="OCR - 日本語、中国語、韓国語" Endpoint="https://du-jp.uipath.com/cjk-ocr" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,84.8" sap2010:WorkflowViewState.IdRef="CjkOCR_1" Image="[Image]" Language="auto" PredictionId="[PredictionId]" Profile="None" Scale="1" Timeout="100000">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </p2:CjkOCR>
+                </ActivityFunc>
+              </p1:DigitizeDocument.OCREngine>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p1:DigitizeDocument>
+            <Sequence sap2010:Annotation.AnnotationText="分類器使わない場合はこちらはコメントアウトすること&#xA;（代わりに抽出器でドキュメントの種類IDを指定する）" DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="803.2,2035.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <p3:ClassifyDocumentScope sap2010:Annotation.AnnotationText="DocumentからどのTaxonomyなのかを判断する。&#xA;自信がある順番（List）として出力される&#xA;&#xA;分類器は複数設定可能" ClassificationResults="[classficationResults]" DisplayName="ドキュメント分類スコープ" DocumentObjectModel="[dom]" DocumentPath="[CurrentFile.FullName]" DocumentText="[strDocumentText]" sap:VirtualizedContainerService.HintSize="575.2,835.2" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_1" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI4a29c435b0b64a9c936af099c4c70f29&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF&quot;,&quot;ClassifierDocumentTypeId&quot;:&quot;&quot;,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;フォーム抽出器.株式会社houseneo.株式会社セレントライフ&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会社セレントライフ&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UI4a29c435b0b64a9c936af099c4c70f29&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UI4a29c435b0b64a9c936af099c4c70f29&quot;:[]}}">
+                <p3:ClassifyDocumentScope.Classifiers>
+                  <p3:IntelligentKeywordClassifier LearningData="{x:Null}" TimeoutMs="{x:Null}" sap2010:Annotation.AnnotationText="Learning File Pathは空のJsonファイルを作成して指定する（メモ帳アプリで作成して拡張子変更でOK）&#xA;&#xA;Endpointは以下のURLがデフォルト&#xA;https://du.uipath.com/svc/intelligentkeywords&#xA;&#xA;日本語OCRのエンドポイント&#xA;https://du-jp.uipath.com/cjk-ocr&#xA;※インテリジェントキーワード分類器のエンドポイントとは別で、「学習を管理」の内部で設定するもの" ApiKey="[strAPIkey]" DisplayName="インテリジェント キーワード分類器" Endpoint="https://du.uipath.com/svc/intelligentkeywords" sap:VirtualizedContainerService.HintSize="233.6,432.8" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifier_1" LearningFilePath="classifierLearning\classifierLearning.json" PerformDocumentSplitting="True" PersistenceId="UI4a29c435b0b64a9c936af099c4c70f29" SendDocumentsForAlgorithmImprovements="True" UsePageNumbers="False">
+                    <p3:IntelligentKeywordClassifier.ClassifierResult>
+                      <OutArgument x:TypeArguments="p4:ClassifierResult">
+                        <DelegateArgumentReference x:TypeArguments="p4:ClassifierResult">
+                          <DelegateOutArgument x:TypeArguments="p4:ClassifierResult" Name="ClassifierResult" />
+                        </DelegateArgumentReference>
+                      </OutArgument>
+                    </p3:IntelligentKeywordClassifier.ClassifierResult>
+                    <p3:IntelligentKeywordClassifier.DocumentObjectModel>
+                      <InArgument x:TypeArguments="p5:Document">
+                        <DelegateArgumentValue x:TypeArguments="p5:Document">
+                          <DelegateInArgument x:TypeArguments="p5:Document" Name="DocumentObjectModel" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p3:IntelligentKeywordClassifier.DocumentObjectModel>
+                    <p3:IntelligentKeywordClassifier.DocumentPath>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p3:IntelligentKeywordClassifier.DocumentPath>
+                    <p3:IntelligentKeywordClassifier.DocumentText>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p3:IntelligentKeywordClassifier.DocumentText>
+                    <p3:IntelligentKeywordClassifier.DocumentTypes>
+                      <InArgument x:TypeArguments="p4:ClassifierDocumentType[]">
+                        <DelegateArgumentValue x:TypeArguments="p4:ClassifierDocumentType[]">
+                          <DelegateInArgument x:TypeArguments="p4:ClassifierDocumentType[]" Name="DocumentTypes" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p3:IntelligentKeywordClassifier.DocumentTypes>
+                    <p3:IntelligentKeywordClassifier.PredictionId>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p3:IntelligentKeywordClassifier.PredictionId>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </p3:IntelligentKeywordClassifier>
+                </p3:ClassifyDocumentScope.Classifiers>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </p3:ClassifyDocumentScope>
+              <p3:PresentClassificationStation AutomaticClassificationResults="[classficationResults]" DisplayName="分類ステーションを提示" DocumentObjectModel="[dom]" DocumentPath="[CurrentFile.FullName]" DocumentText="[strDocumentText]" sap:VirtualizedContainerService.HintSize="575.2,372" sap2010:WorkflowViewState.IdRef="PresentClassificationStation_1" Taxonomy="[taxonomy]" ValidatedClassificationResults="[classficationValidatedResults]" />
+              <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="575.2,592" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="無視されたアクティビティ" sap:VirtualizedContainerService.HintSize="540,513.6" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p6:TrainClassifiersScope HumanValidatedData="{x:Null}" sap2010:Annotation.AnnotationText="分類器使わない場合はコメントオフすること" DisplayName="分類器トレーニング スコープ" DocumentObjectModel="[dom]" DocumentPath="[CurrentFile.FullName]" DocumentText="[strDocumentText]" sap:VirtualizedContainerService.HintSize="477.6,401.6" HumanValidatedClassificationData="[classficationValidatedResults]" sap2010:WorkflowViewState.IdRef="TrainClassifiersScope_3" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI6a442bc4e34f47169fd404346595e023&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UI6a442bc4e34f47169fd404346595e023&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UI6a442bc4e34f47169fd404346595e023&quot;:[]}}">
+                      <p6:TrainClassifiersScope.Trainables>
+                        <p6:IntelligentKeywordClassifierTrainer LearningData="{x:Null}" PredictionId="{x:Null}" DisplayName="インテリジェント キーワード分類器トレーナー" sap:VirtualizedContainerService.HintSize="233.6,115.2" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifierTrainer_3" LearningFilePath="classifierLearning\classifierLearning.json" PersistenceId="UI6a442bc4e34f47169fd404346595e023">
+                          <p6:IntelligentKeywordClassifierTrainer.DocumentObjectModel>
+                            <InArgument x:TypeArguments="p5:Document">
+                              <DelegateArgumentValue x:TypeArguments="p5:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_90">
+                                <DelegateInArgument x:TypeArguments="p5:Document" Name="DocumentObjectModel" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p6:IntelligentKeywordClassifierTrainer.DocumentObjectModel>
+                          <p6:IntelligentKeywordClassifierTrainer.DocumentPath>
+                            <InArgument x:TypeArguments="x:String">
+                              <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_91">
+                                <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p6:IntelligentKeywordClassifierTrainer.DocumentPath>
+                          <p6:IntelligentKeywordClassifierTrainer.DocumentText>
+                            <InArgument x:TypeArguments="x:String">
+                              <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_89">
+                                <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p6:IntelligentKeywordClassifierTrainer.DocumentText>
+                          <p6:IntelligentKeywordClassifierTrainer.HumanValidatedData>
+                            <InArgument x:TypeArguments="p:ExtractionResult[]">
+                              <DelegateArgumentValue x:TypeArguments="p:ExtractionResult[]" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_92">
+                                <DelegateInArgument x:TypeArguments="p:ExtractionResult[]" Name="HumanValidatedData" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p6:IntelligentKeywordClassifierTrainer.HumanValidatedData>
+                        </p6:IntelligentKeywordClassifierTrainer>
+                      </p6:TrainClassifiersScope.Trainables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p6:TrainClassifiersScope>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+            </Sequence>
+            <p7:DataExtractionScope DocumentTypeId="{x:Null}" sap2010:Annotation.AnnotationText="ドキュメント種類が1種の場合はドキュメントの種類IDを指定（Classification Resultは空欄）&#xA;IDはTaxonomy Managerで作成されているので、そちらを参照&#xA;&#xA;ドキュメント種類が複数の場合は「classficationValidatedResults（0）」を記入（Type IDは空欄）&#xA;0番目の指定で問題ないはず（自信がある順に出力する）&#xA;&#xA;※分類結果か、ドキュメントの種類IDのどちらかを記入する（どちらかは空欄）" ClassificationResult="[classficationValidatedResults(0)]" DisplayName="データ抽出スコープ" DocumentObjectModel="[dom]" DocumentPath="[CurrentFile.FullName]" DocumentText="[strDocumentText]" ExtractionResult="[extractionResults]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="803.2,658.4" sap2010:WorkflowViewState.IdRef="DataExtractionScope_1" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI2417dd602be0442eb11512413cb5b81b&quot;:{&quot;DocumentTypeMappings&quot;:{}},&quot;UI545c3377a1884defb3e205e92ae87c8c&quot;:{&quot;DocumentTypeMappings&quot;:{}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI2417dd602be0442eb11512413cb5b81b&quot;:&quot;0&quot;,&quot;UI545c3377a1884defb3e205e92ae87c8c&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI2417dd602be0442eb11512413cb5b81b&quot;:[],&quot;UI545c3377a1884defb3e205e92ae87c8c&quot;:[{&quot;FieldId&quot;:&quot;&quot;,&quot;SubOptions&quot;:[{&quot;FieldId&quot;:&quot;field-1&quot;,&quot;SubOptions&quot;:null},{&quot;FieldId&quot;:&quot;field-2&quot;,&quot;SubOptions&quot;:null},{&quot;FieldId&quot;:&quot;field-4&quot;,&quot;SubOptions&quot;:null},{&quot;FieldId&quot;:&quot;field-5&quot;,&quot;SubOptions&quot;:null},{&quot;FieldId&quot;:&quot;field-9&quot;,&quot;SubOptions&quot;:null},{&quot;FieldId&quot;:&quot;field-10&quot;,&quot;SubOptions&quot;:null},{&quot;FieldId&quot;:&quot;field-11&quot;,&quot;SubOptions&quot;:null},{&quot;FieldId&quot;:&quot;field-12&quot;,&quot;SubOptions&quot;:null},{&quot;FieldId&quot;:&quot;field-3&quot;,&quot;SubOptions&quot;:null}]}]}}">
+              <p7:DataExtractionScope.Extractors>
+                <p7:FormExtractor SerializedSignatureFields="{x:Null}" sap2010:Annotation.AnnotationText="日本語OCRのエンドポイント&#xA;https://du-jp.uipath.com/cjk-ocr" ApiKey="[strAPIkey]" DisplayName="フォーム抽出器" Endpoint="https://du.uipath.com/svc/formextractor" sap:VirtualizedContainerService.HintSize="233.6,208" sap2010:WorkflowViewState.IdRef="FormExtractor_2" MinOverlapPercentage="65" PersistenceId="UI2417dd602be0442eb11512413cb5b81b" SendDocumentsForAlgorithmImprovements="True" SerializedSettings="{}{}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;NoGroup.NoCategory.白金商事&quot;,&quot;FormId&quot;:&quot;777985fe&quot;,&quot;FormName&quot;:&quot;白金商事&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:1,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;NoGroup.NoCategory.白金商事.所在地&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-6.2022,39.9628,372.3313,11.681],&quot;Target&quot;:{&quot;Text&quot;:&quot;所 在 地&quot;,&quot;Area&quot;:[213.38,100.29,23.2,9.08]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;NoGroup.NoCategory.白金商事.交通&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-14.4662,37.9676,370.8712,28.4724],&quot;Target&quot;:{&quot;Text&quot;:&quot;交 通&quot;,&quot;Area&quot;:[234.46,105.63,13.59,8.27]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;NoGroup.NoCategory.白金商事.間取り&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-11.8539,38.6927,147.4724,24.8221],&quot;Target&quot;:{&quot;Text&quot;:&quot;間 取 り / 詳 細&quot;,&quot;Area&quot;:[258.46,91.22,42.42,9.07]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;NoGroup.NoCategory.白金商事.賃料&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-6.827,41.5529,144.5521,15.3313],&quot;Target&quot;:{&quot;Text&quot;:&quot;賃 料&quot;,&quot;Area&quot;:[276.6,105.09,13.34,8.0]},&quot;Anchors&quot;:[]}]}]}},{&quot;DocumentTypeId&quot;:&quot;29.アズスタット.空室&quot;,&quot;FormId&quot;:&quot;b011b262&quot;,&quot;FormName&quot;:&quot;アズスタット空室&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;業&quot;,&quot;Box&quot;:[59.75,410.76,7.47,10.67]},{&quot;Text&quot;:&quot;務&quot;,&quot;Box&quot;:[59.75,419.3,7.74,10.94]},{&quot;Text&quot;:&quot;委&quot;,&quot;Box&quot;:[60.01,428.9,8.0,10.67]},{&quot;Text&quot;:&quot;託&quot;,&quot;Box&quot;:[59.75,437.7,8.0,10.94]},{&quot;Text&quot;:&quot;手&quot;,&quot;Box&quot;:[59.48,447.31,8.27,11.2]},{&quot;Text&quot;:&quot;特&quot;,&quot;Box&quot;:[67.75,495.05,7.2,9.87]},{&quot;Text&quot;:&quot;記&quot;,&quot;Box&quot;:[67.48,504.12,7.2,10.14]},{&quot;Text&quot;:&quot;事&quot;,&quot;Box&quot;:[67.48,514.26,7.2,10.14]},{&quot;Text&quot;:&quot;項&quot;,&quot;Box&quot;:[67.22,523.59,7.47,10.4]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.ステータス&quot;,&quot;Box&quot;:[56.7529,27.5033,28.813,29.2496]},{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.号室&quot;,&quot;Box&quot;:[56.7529,56.3164,26.1937,29.2496]},{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.現況&quot;,&quot;Box&quot;:[56.7529,82.51,53.2604,29.2496]},{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.間取り&quot;,&quot;Box&quot;:[56.7529,135.7705,54.1336,29.2496]},{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.敷金&quot;,&quot;Box&quot;:[56.7529,189.9041,43.6561,29.2496]},{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.礼金&quot;,&quot;Box&quot;:[56.7529,233.5602,41.9099,29.2496]},{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.家賃&quot;,&quot;Box&quot;:[56.7529,275.47,45.8389,29.2496]},{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.共益費&quot;,&quot;Box&quot;:[56.7529,321.3089,41.9099,29.2496]},{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.水道代&quot;,&quot;Box&quot;:[56.7529,363.2188,43.6561,29.2496]},{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.業務委託手数料&quot;,&quot;Box&quot;:[56.7529,406.8749,53.697,29.2496]},{&quot;FieldId&quot;:&quot;29.アズスタット.空室.空室情報.特記事項&quot;,&quot;Box&quot;:[56.7529,460.5719,109.3585,29.2496]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[86.0025,27.5033,28.813,27.9399]},{&quot;Row&quot;:0,&quot;Column&quot;:1,&quot;Box&quot;:[86.0025,56.3164,26.1937,27.9399]},{&quot;Row&quot;:0,&quot;Column&quot;:2,&quot;Box&quot;:[86.0025,82.51,53.2604,27.9399]},{&quot;Row&quot;:0,&quot;Column&quot;:3,&quot;Box&quot;:[86.0025,135.7705,54.1336,27.9399]},{&quot;Row&quot;:0,&quot;Column&quot;:4,&quot;Box&quot;:[86.0025,189.9041,43.6561,27.9399]},{&quot;Row&quot;:0,&quot;Column&quot;:5,&quot;Box&quot;:[86.0025,233.5602,41.9099,27.9399]},{&quot;Row&quot;:0,&quot;Column&quot;:6,&quot;Box&quot;:[86.0025,275.47,45.8389,27.9399]},{&quot;Row&quot;:0,&quot;Column&quot;:7,&quot;Box&quot;:[86.0025,321.3089,41.9099,27.9399]},{&quot;Row&quot;:0,&quot;Column&quot;:8,&quot;Box&quot;:[86.0025,363.2188,43.6561,27.9399]},{&quot;Row&quot;:0,&quot;Column&quot;:9,&quot;Box&quot;:[86.0025,406.8749,53.697,27.9399]},{&quot;Row&quot;:0,&quot;Column&quot;:10,&quot;Box&quot;:[86.0025,460.5719,109.3585,27.9399]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[113.9424,27.5033,28.813,27.5033]},{&quot;Row&quot;:1,&quot;Column&quot;:1,&quot;Box&quot;:[113.9424,56.3164,26.1937,27.5033]},{&quot;Row&quot;:1,&quot;Column&quot;:2,&quot;Box&quot;:[113.9424,82.51,53.2604,27.5033]},{&quot;Row&quot;:1,&quot;Column&quot;:3,&quot;Box&quot;:[113.9424,135.7705,54.1336,27.5033]},{&quot;Row&quot;:1,&quot;Column&quot;:4,&quot;Box&quot;:[113.9424,189.9041,43.6561,27.5033]},{&quot;Row&quot;:1,&quot;Column&quot;:5,&quot;Box&quot;:[113.9424,233.5602,41.9099,27.5033]},{&quot;Row&quot;:1,&quot;Column&quot;:6,&quot;Box&quot;:[113.9424,275.47,45.8389,27.5033]},{&quot;Row&quot;:1,&quot;Column&quot;:7,&quot;Box&quot;:[113.9424,321.3089,41.9099,27.5033]},{&quot;Row&quot;:1,&quot;Column&quot;:8,&quot;Box&quot;:[113.9424,363.2188,43.6561,27.5033]},{&quot;Row&quot;:1,&quot;Column&quot;:9,&quot;Box&quot;:[113.9424,406.8749,53.697,27.5033]},{&quot;Row&quot;:1,&quot;Column&quot;:10,&quot;Box&quot;:[113.9424,460.5719,109.3585,27.5033]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[141.4458,27.5033,28.813,27.9399]},{&quot;Row&quot;:2,&quot;Column&quot;:1,&quot;Box&quot;:[141.4458,56.3164,26.1937,27.9399]},{&quot;Row&quot;:2,&quot;Column&quot;:2,&quot;Box&quot;:[141.4458,82.51,53.2604,27.9399]},{&quot;Row&quot;:2,&quot;Column&quot;:3,&quot;Box&quot;:[141.4458,135.7705,54.1336,27.9399]},{&quot;Row&quot;:2,&quot;Column&quot;:4,&quot;Box&quot;:[141.4458,189.9041,43.6561,27.9399]},{&quot;Row&quot;:2,&quot;Column&quot;:5,&quot;Box&quot;:[141.4458,233.5602,41.9099,27.9399]},{&quot;Row&quot;:2,&quot;Column&quot;:6,&quot;Box&quot;:[141.4458,275.47,45.8389,27.9399]},{&quot;Row&quot;:2,&quot;Column&quot;:7,&quot;Box&quot;:[141.4458,321.3089,41.9099,27.9399]},{&quot;Row&quot;:2,&quot;Column&quot;:8,&quot;Box&quot;:[141.4458,363.2188,43.6561,27.9399]},{&quot;Row&quot;:2,&quot;Column&quot;:9,&quot;Box&quot;:[141.4458,406.8749,53.697,27.9399]},{&quot;Row&quot;:2,&quot;Column&quot;:10,&quot;Box&quot;:[141.4458,460.5719,109.3585,27.9399]},{&quot;Row&quot;:3,&quot;Column&quot;:0,&quot;Box&quot;:[169.3857,27.5033,28.813,28.813]},{&quot;Row&quot;:3,&quot;Column&quot;:1,&quot;Box&quot;:[169.3857,56.3164,26.1937,28.813]},{&quot;Row&quot;:3,&quot;Column&quot;:2,&quot;Box&quot;:[169.3857,82.51,53.2604,28.813]},{&quot;Row&quot;:3,&quot;Column&quot;:3,&quot;Box&quot;:[169.3857,135.7705,54.1336,28.813]},{&quot;Row&quot;:3,&quot;Column&quot;:4,&quot;Box&quot;:[169.3857,189.9041,43.6561,28.813]},{&quot;Row&quot;:3,&quot;Column&quot;:5,&quot;Box&quot;:[169.3857,233.5602,41.9099,28.813]},{&quot;Row&quot;:3,&quot;Column&quot;:6,&quot;Box&quot;:[169.3857,275.47,45.8389,28.813]},{&quot;Row&quot;:3,&quot;Column&quot;:7,&quot;Box&quot;:[169.3857,321.3089,41.9099,28.813]},{&quot;Row&quot;:3,&quot;Column&quot;:8,&quot;Box&quot;:[169.3857,363.2188,43.6561,28.813]},{&quot;Row&quot;:3,&quot;Column&quot;:9,&quot;Box&quot;:[169.3857,406.8749,53.697,28.813]},{&quot;Row&quot;:3,&quot;Column&quot;:10,&quot;Box&quot;:[169.3857,460.5719,109.3585,28.813]},{&quot;Row&quot;:4,&quot;Column&quot;:0,&quot;Box&quot;:[198.1987,27.5033,28.813,27.9399]},{&quot;Row&quot;:4,&quot;Column&quot;:1,&quot;Box&quot;:[198.1987,56.3164,26.1937,27.9399]},{&quot;Row&quot;:4,&quot;Column&quot;:2,&quot;Box&quot;:[198.1987,82.51,53.2604,27.9399]},{&quot;Row&quot;:4,&quot;Column&quot;:3,&quot;Box&quot;:[198.1987,135.7705,54.1336,27.9399]},{&quot;Row&quot;:4,&quot;Column&quot;:4,&quot;Box&quot;:[198.1987,189.9041,43.6561,27.9399]},{&quot;Row&quot;:4,&quot;Column&quot;:5,&quot;Box&quot;:[198.1987,233.5602,41.9099,27.9399]},{&quot;Row&quot;:4,&quot;Column&quot;:6,&quot;Box&quot;:[198.1987,275.47,45.8389,27.9399]},{&quot;Row&quot;:4,&quot;Column&quot;:7,&quot;Box&quot;:[198.1987,321.3089,41.9099,27.9399]},{&quot;Row&quot;:4,&quot;Column&quot;:8,&quot;Box&quot;:[198.1987,363.2188,43.6561,27.9399]},{&quot;Row&quot;:4,&quot;Column&quot;:9,&quot;Box&quot;:[198.1987,406.8749,53.697,27.9399]},{&quot;Row&quot;:4,&quot;Column&quot;:10,&quot;Box&quot;:[198.1987,460.5719,109.3585,27.9399]},{&quot;Row&quot;:5,&quot;Column&quot;:0,&quot;Box&quot;:[226.1386,27.5033,28.813,27.0668]},{&quot;Row&quot;:5,&quot;Column&quot;:1,&quot;Box&quot;:[226.1386,56.3164,26.1937,27.0668]},{&quot;Row&quot;:5,&quot;Column&quot;:2,&quot;Box&quot;:[226.1386,82.51,53.2604,27.0668]},{&quot;Row&quot;:5,&quot;Column&quot;:3,&quot;Box&quot;:[226.1386,135.7705,54.1336,27.0668]},{&quot;Row&quot;:5,&quot;Column&quot;:4,&quot;Box&quot;:[226.1386,189.9041,43.6561,27.0668]},{&quot;Row&quot;:5,&quot;Column&quot;:5,&quot;Box&quot;:[226.1386,233.5602,41.9099,27.0668]},{&quot;Row&quot;:5,&quot;Column&quot;:6,&quot;Box&quot;:[226.1386,275.47,45.8389,27.0668]},{&quot;Row&quot;:5,&quot;Column&quot;:7,&quot;Box&quot;:[226.1386,321.3089,41.9099,27.0668]},{&quot;Row&quot;:5,&quot;Column&quot;:8,&quot;Box&quot;:[226.1386,363.2188,43.6561,27.0668]},{&quot;Row&quot;:5,&quot;Column&quot;:9,&quot;Box&quot;:[226.1386,406.8749,53.697,27.0668]},{&quot;Row&quot;:5,&quot;Column&quot;:10,&quot;Box&quot;:[226.1386,460.5719,109.3585,27.0668]},{&quot;Row&quot;:6,&quot;Column&quot;:0,&quot;Box&quot;:[253.2054,27.5033,28.813,29.9044]},{&quot;Row&quot;:6,&quot;Column&quot;:1,&quot;Box&quot;:[253.2054,56.3164,26.1937,29.9044]},{&quot;Row&quot;:6,&quot;Column&quot;:2,&quot;Box&quot;:[253.2054,82.51,53.2604,29.9044]},{&quot;Row&quot;:6,&quot;Column&quot;:3,&quot;Box&quot;:[253.2054,135.7705,54.1336,29.9044]},{&quot;Row&quot;:6,&quot;Column&quot;:4,&quot;Box&quot;:[253.2054,189.9041,43.6561,29.9044]},{&quot;Row&quot;:6,&quot;Column&quot;:5,&quot;Box&quot;:[253.2054,233.5602,41.9099,29.9044]},{&quot;Row&quot;:6,&quot;Column&quot;:6,&quot;Box&quot;:[253.2054,275.47,45.8389,29.9044]},{&quot;Row&quot;:6,&quot;Column&quot;:7,&quot;Box&quot;:[253.2054,321.3089,41.9099,29.9044]},{&quot;Row&quot;:6,&quot;Column&quot;:8,&quot;Box&quot;:[253.2054,363.2188,43.6561,29.9044]},{&quot;Row&quot;:6,&quot;Column&quot;:9,&quot;Box&quot;:[253.2054,406.8749,53.697,29.9044]},{&quot;Row&quot;:6,&quot;Column&quot;:10,&quot;Box&quot;:[253.2054,460.5719,109.3585,29.9044]}]}]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}},{&quot;DocumentTypeId&quot;:&quot;29.アズスタット_物件.物件&quot;,&quot;FormId&quot;:&quot;bb4b00b1&quot;,&quot;FormName&quot;:&quot;Azstat01&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,780.0,540.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;株式会社&quot;,&quot;Box&quot;:[503.16,86.52,52.2,12.96]},{&quot;Text&quot;:&quot;アズ・スタット&quot;,&quot;Box&quot;:[503.16,147.12,70.71,12.96]},{&quot;Text&quot;:&quot;TEL.０６（６１５０）４１４８&quot;,&quot;Box&quot;:[502.11,243.79,132.02,13.93]},{&quot;Text&quot;:&quot;FAX.&quot;,&quot;Box&quot;:[503.22,390.19,28.8,11.57]},{&quot;Text&quot;:&quot;０６（６１５０）００７０&quot;,&quot;Box&quot;:[500.86,422.47,102.86,12.96]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.最寄り駅&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-4.5471,71.005,66.0945,18.8842],&quot;Target&quot;:{&quot;Text&quot;:&quot;最&quot;,&quot;Area&quot;:[70.13,544.8,8.0,5.07]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;寄&quot;,&quot;Area&quot;:[75.2,544.8,8.0,5.87]},{&quot;Text&quot;:&quot;駅&quot;,&quot;Area&quot;:[81.87,544.8,8.0,5.87]}]}]},{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.間取りタイプ&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[3.258,50.2325,101.1651,18.2097],&quot;Target&quot;:{&quot;Text&quot;:&quot;間&quot;,&quot;Area&quot;:[92.0,544.53,8.27,5.07]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;取&quot;,&quot;Area&quot;:[97.07,544.53,8.27,4.0]},{&quot;Text&quot;:&quot;タ&quot;,&quot;Area&quot;:[101.07,544.53,8.27,4.8]},{&quot;Text&quot;:&quot;イ&quot;,&quot;Area&quot;:[105.87,544.53,8.27,4.0]},{&quot;Text&quot;:&quot;プ&quot;,&quot;Area&quot;:[109.87,544.53,8.27,5.07]}]}]},{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.交通&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-4.6094,14.8875,169.9574,32.3728],&quot;Target&quot;:{&quot;Text&quot;:&quot;交&quot;,&quot;Area&quot;:[214.67,545.33,5.87,7.47]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;通&quot;,&quot;Area&quot;:[233.33,545.07,7.47,5.87]}]}]},{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.面積&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-2.4726,20.1765,51.257,11.4654],&quot;Target&quot;:{&quot;Text&quot;:&quot;用 部 分&quot;,&quot;Area&quot;:[281.87,564.8,18.4,7.73]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;面&quot;,&quot;Area&quot;:[287.73,559.2,5.33,7.2]},{&quot;Text&quot;:&quot;積&quot;,&quot;Area&quot;:[287.2,578.67,5.87,7.73]}]}]}]}},{&quot;DocumentTypeId&quot;:&quot;29.アズスタット_物件.物件&quot;,&quot;FormId&quot;:&quot;5e6a4123&quot;,&quot;FormName&quot;:&quot;Azstat02&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,780.0,540.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;〒５３２－０００２&quot;,&quot;Box&quot;:[483.37,304.92,60.12,9.96]},{&quot;Text&quot;:&quot;大阪市淀川区東三国２丁目３７番３号&quot;,&quot;Box&quot;:[483.37,371.76,152.47,9.96]},{&quot;Text&quot;:&quot;０６（６１５０）４１４８&quot;,&quot;Box&quot;:[498.13,334.92,67.5,9.96]},{&quot;Text&quot;:&quot;０６（６１５０）００７０&quot;,&quot;Box&quot;:[498.06,431.35,67.5,9.96]},{&quot;Text&quot;:&quot;株&quot;,&quot;Box&quot;:[491.2,93.07,16.0,21.07]},{&quot;Text&quot;:&quot;式&quot;,&quot;Box&quot;:[490.93,109.87,16.0,21.33]},{&quot;Text&quot;:&quot;会&quot;,&quot;Box&quot;:[490.67,128.0,15.47,21.6]},{&quot;Text&quot;:&quot;社&quot;,&quot;Box&quot;:[490.67,143.47,16.0,21.6]},{&quot;Text&quot;:&quot;URL&quot;,&quot;Box&quot;:[512.82,318.0,18.45,9.96]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.最寄り駅&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-2.9333,63.061,78.2344,20.233],&quot;Target&quot;:{&quot;Text&quot;:&quot;最&quot;,&quot;Area&quot;:[69.6,557.6,7.73,5.6]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;寄&quot;,&quot;Area&quot;:[75.47,557.87,7.73,5.6]},{&quot;Text&quot;:&quot;駅&quot;,&quot;Area&quot;:[81.87,558.13,7.73,5.6]}]}]},{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.間取りタイプ&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[1.1557,51.0657,97.793,16.1864],&quot;Target&quot;:{&quot;Text&quot;:&quot;取&quot;,&quot;Area&quot;:[97.07,558.13,7.73,4.53]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;イ&quot;,&quot;Area&quot;:[106.4,558.4,7.47,4.0]},{&quot;Text&quot;:&quot;プ&quot;,&quot;Area&quot;:[110.4,558.4,7.47,5.6]}]}]},{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.交通&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-4.8694,12.7435,177.3762,29.6751],&quot;Target&quot;:{&quot;Text&quot;:&quot;交&quot;,&quot;Area&quot;:[214.93,558.4,5.6,7.47]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;通&quot;,&quot;Area&quot;:[233.87,557.87,7.2,5.6]}]}]},{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.面積&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-4.8959,28.4092,60.0246,13.4887],&quot;Target&quot;:{&quot;Text&quot;:&quot;使&quot;,&quot;Area&quot;:[282.4,571.47,6.13,7.47]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;用&quot;,&quot;Area&quot;:[282.4,577.33,5.87,7.73]},{&quot;Text&quot;:&quot;部&quot;,&quot;Area&quot;:[282.4,584.27,5.87,7.73]},{&quot;Text&quot;:&quot;分&quot;,&quot;Area&quot;:[282.13,590.4,5.33,8.0]},{&quot;Text&quot;:&quot;面&quot;,&quot;Area&quot;:[287.73,572.0,5.07,6.67]},{&quot;Text&quot;:&quot;積&quot;,&quot;Area&quot;:[287.73,591.2,5.07,6.93]}]}]}]}},{&quot;DocumentTypeId&quot;:&quot;29.アズスタット_物件.物件&quot;,&quot;FormId&quot;:&quot;5f807393&quot;,&quot;FormName&quot;:&quot;Azstat03&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,780.0,540.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;〒530-0002&quot;,&quot;Box&quot;:[487.14,253.54,57.91,9.96]},{&quot;Text&quot;:&quot;大阪市淀川区東三国2丁目37番3号&quot;,&quot;Box&quot;:[487.14,321.7,154.46,9.96]},{&quot;Text&quot;:&quot;TEL.&quot;,&quot;Box&quot;:[501.88,254.9,21.47,9.96]},{&quot;Text&quot;:&quot;06（6150）4148&quot;,&quot;Box&quot;:[501.88,279.85,82.31,9.96]},{&quot;Text&quot;:&quot;FAX.&quot;,&quot;Box&quot;:[501.83,378.67,22.55,9.96]},{&quot;Text&quot;:&quot;06（6150）0070&quot;,&quot;Box&quot;:[501.83,404.82,82.31,9.96]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.最寄り駅&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[0.9229,51.9723,93.0719,10.7909],&quot;Target&quot;:{&quot;Text&quot;:&quot;取&quot;,&quot;Area&quot;:[65.33,568.27,5.87,3.73]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;寄&quot;,&quot;Area&quot;:[69.87,568.53,5.87,4.27]},{&quot;Text&quot;:&quot;駅&quot;,&quot;Area&quot;:[76.0,568.8,5.6,4.27]}]}]},{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.間取りタイプ&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[2.5275,80.7078,24.9541,17.5353],&quot;Target&quot;:{&quot;Text&quot;:&quot;間&quot;,&quot;Area&quot;:[87.47,568.27,6.4,4.8]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;タ&quot;,&quot;Area&quot;:[97.33,568.27,6.13,4.53]},{&quot;Text&quot;:&quot;イ&quot;,&quot;Area&quot;:[102.13,568.27,6.4,4.27]},{&quot;Text&quot;:&quot;プ&quot;,&quot;Area&quot;:[106.13,568.27,6.67,4.53]}]}]},{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.交通&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-7.0415,8.404,175.3529,35.0706],&quot;Target&quot;:{&quot;Text&quot;:&quot;交&quot;,&quot;Area&quot;:[213.6,568.27,5.33,7.73]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;通&quot;,&quot;Area&quot;:[232.27,569.33,5.6,7.73]}]}]},{&quot;FieldId&quot;:&quot;29.アズスタット_物件.物件.面積&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-5.6959,14.5863,147.0267,18.8842],&quot;Target&quot;:{&quot;Text&quot;:&quot;使 用 部 分&quot;,&quot;Area&quot;:[283.47,580.8,21.86,6.93]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;使&quot;,&quot;Area&quot;:[283.47,580.8,5.07,6.93]}]}]}]}},{&quot;DocumentTypeId&quot;:&quot;2_株式会社houseneo.Chrome出力.test&quot;,&quot;FormId&quot;:&quot;476f93f2&quot;,&quot;FormName&quot;:&quot;houseneo01&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;賃&quot;,&quot;Box&quot;:[23.47,80.82,8.0,9.87]},{&quot;Text&quot;:&quot;貸&quot;,&quot;Box&quot;:[24.01,90.15,7.74,9.6]},{&quot;Text&quot;:&quot;house&quot;,&quot;Box&quot;:[232.06,47.48,16.0,6.94]},{&quot;Text&quot;:&quot;neo&quot;,&quot;Box&quot;:[232.59,63.48,12.0,6.4]},{&quot;Text&quot;:&quot;018-832-3701&quot;,&quot;Box&quot;:[241.39,38.41,45.61,7.74]},{&quot;Text&quot;:&quot;情&quot;,&quot;Box&quot;:[47.21,468.64,3.73,6.13]},{&quot;Text&quot;:&quot;報&quot;,&quot;Box&quot;:[47.21,472.38,4.53,6.13]},{&quot;Text&quot;:&quot;更&quot;,&quot;Box&quot;:[47.21,476.91,4.53,6.13]},{&quot;Text&quot;:&quot;新&quot;,&quot;Box&quot;:[47.21,481.45,3.73,6.4]},{&quot;Text&quot;:&quot;日&quot;,&quot;Box&quot;:[47.21,484.92,4.53,6.4]},{&quot;Text&quot;:&quot;掲&quot;,&quot;Box&quot;:[46.94,520.66,4.27,6.67]},{&quot;Text&quot;:&quot;載&quot;,&quot;Box&quot;:[46.94,524.66,4.27,6.67]},{&quot;Text&quot;:&quot;期&quot;,&quot;Box&quot;:[46.94,528.66,4.8,6.67]},{&quot;Text&quot;:&quot;限&quot;,&quot;Box&quot;:[46.94,533.19,4.27,6.67]},{&quot;Text&quot;:&quot;日&quot;,&quot;Box&quot;:[46.94,537.46,4.27,6.67]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;2_株式会社houseneo.Chrome出力.test.最寄駅&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-4.6986,36.484,299.4228,15.4342],&quot;Target&quot;:{&quot;Text&quot;:&quot;最&quot;,&quot;Area&quot;:[78.42,230.45,4.27,5.87]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;寄&quot;,&quot;Area&quot;:[78.42,234.72,4.27,5.87]},{&quot;Text&quot;:&quot;り&quot;,&quot;Area&quot;:[78.42,239.26,4.27,5.6]},{&quot;Text&quot;:&quot;駅&quot;,&quot;Area&quot;:[78.42,244.32,4.27,5.6]},{&quot;Text&quot;:&quot;交&quot;,&quot;Area&quot;:[78.42,252.59,4.53,5.6]},{&quot;Text&quot;:&quot;通&quot;,&quot;Area&quot;:[78.42,257.13,4.8,5.6]}]}]},{&quot;FieldId&quot;:&quot;2_株式会社houseneo.Chrome出力.test.賃料&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-3.9435,36.115,65.338,8.746],&quot;Target&quot;:{&quot;Text&quot;:&quot;賃&quot;,&quot;Area&quot;:[112.29,230.19,3.47,4.53]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;料&quot;,&quot;Area&quot;:[112.03,234.99,3.73,4.8]}]}]},{&quot;FieldId&quot;:&quot;2_株式会社houseneo.Chrome出力.test.間取り&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-3.46,18.9563,89.0037,6.1737],&quot;Target&quot;:{&quot;Text&quot;:&quot;間&quot;,&quot;Area&quot;:[195.51,455.31,4.27,5.87]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;取&quot;,&quot;Area&quot;:[195.51,459.58,4.0,6.13]},{&quot;Text&quot;:&quot;り&quot;,&quot;Area&quot;:[195.78,463.58,4.53,5.87]}]}]},{&quot;FieldId&quot;:&quot;2_株式会社houseneo.Chrome出力.test.設備&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-3.0591,35.855,299.4228,36.0131],&quot;Target&quot;:{&quot;Text&quot;:&quot;設&quot;,&quot;Area&quot;:[253.13,230.45,3.47,5.07]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;備&quot;,&quot;Area&quot;:[253.13,234.99,3.73,5.07]},{&quot;Text&quot;:&quot;条&quot;,&quot;Area&quot;:[253.13,244.32,3.73,5.07]},{&quot;Text&quot;:&quot;件&quot;,&quot;Area&quot;:[253.13,249.13,3.73,5.07]}]}]}]}},{&quot;DocumentTypeId&quot;:&quot;2_株式会社houseneo.Chrome出力.test&quot;,&quot;FormId&quot;:&quot;8eb9b815&quot;,&quot;FormName&quot;:&quot;houseneo02&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;賃&quot;,&quot;Box&quot;:[23.47,80.82,8.0,10.14]},{&quot;Text&quot;:&quot;貸&quot;,&quot;Box&quot;:[24.01,90.15,7.74,9.6]},{&quot;Text&quot;:&quot;物&quot;,&quot;Box&quot;:[44.28,26.94,4.8,7.74]},{&quot;Text&quot;:&quot;番&quot;,&quot;Box&quot;:[44.01,35.74,4.8,7.74]},{&quot;Text&quot;:&quot;号&quot;,&quot;Box&quot;:[44.01,40.01,6.13,7.47]},{&quot;Text&quot;:&quot;house&quot;,&quot;Box&quot;:[232.32,48.01,15.47,6.67]},{&quot;Text&quot;:&quot;neo&quot;,&quot;Box&quot;:[232.59,63.48,11.74,6.13]},{&quot;Text&quot;:&quot;018-832-3701&quot;,&quot;Box&quot;:[241.39,38.41,45.61,7.74]},{&quot;Text&quot;:&quot;情&quot;,&quot;Box&quot;:[46.94,468.64,3.73,6.4]},{&quot;Text&quot;:&quot;報&quot;,&quot;Box&quot;:[47.21,472.38,4.53,6.13]},{&quot;Text&quot;:&quot;更&quot;,&quot;Box&quot;:[47.21,476.91,4.27,6.13]},{&quot;Text&quot;:&quot;日&quot;,&quot;Box&quot;:[47.21,485.18,4.0,6.4]},{&quot;Text&quot;:&quot;掲&quot;,&quot;Box&quot;:[47.21,520.39,4.27,6.4]},{&quot;Text&quot;:&quot;期&quot;,&quot;Box&quot;:[47.21,528.66,4.8,6.4]},{&quot;Text&quot;:&quot;限&quot;,&quot;Box&quot;:[47.21,533.19,4.0,6.4]},{&quot;Text&quot;:&quot;日&quot;,&quot;Box&quot;:[47.21,536.93,4.8,6.4]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;2_株式会社houseneo.Chrome出力.test.最寄駅&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-5.2131,35.9695,137.3641,14.9197],&quot;Target&quot;:{&quot;Text&quot;:&quot;最&quot;,&quot;Area&quot;:[78.42,230.45,4.27,5.87]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;寄&quot;,&quot;Area&quot;:[78.42,234.72,4.53,5.87]},{&quot;Text&quot;:&quot;り&quot;,&quot;Area&quot;:[78.42,239.26,4.27,5.87]},{&quot;Text&quot;:&quot;駅&quot;,&quot;Area&quot;:[78.42,244.32,4.0,5.87]},{&quot;Text&quot;:&quot;/&quot;,&quot;Area&quot;:[78.42,248.33,4.27,5.6]},{&quot;Text&quot;:&quot;交&quot;,&quot;Area&quot;:[78.42,252.59,4.53,5.6]},{&quot;Text&quot;:&quot;通&quot;,&quot;Area&quot;:[78.42,257.13,4.8,5.6]}]}]},{&quot;FieldId&quot;:&quot;2_株式会社houseneo.Chrome出力.test.賃料&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-5.1074,33.7971,25.2091,7.7171],&quot;Target&quot;:{&quot;Text&quot;:&quot;賃&quot;,&quot;Area&quot;:[112.29,230.45,3.47,4.8]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;料&quot;,&quot;Area&quot;:[112.03,235.26,3.73,4.8]}]}]},{&quot;FieldId&quot;:&quot;2_株式会社houseneo.Chrome出力.test.間取り&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-4.489,33.3615,16.9776,8.2316],&quot;Target&quot;:{&quot;Text&quot;:&quot;間&quot;,&quot;Area&quot;:[195.51,455.31,4.27,5.87]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;取&quot;,&quot;Area&quot;:[195.51,459.58,4.0,6.13]},{&quot;Text&quot;:&quot;り&quot;,&quot;Area&quot;:[195.78,463.58,4.53,5.87]}]}]},{&quot;FieldId&quot;:&quot;2_株式会社houseneo.Chrome出力.test.設備&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-4.2131,37.014,300.9663,36.0131],&quot;Target&quot;:{&quot;Text&quot;:&quot;設&quot;,&quot;Area&quot;:[253.39,230.19,3.73,4.8]},&quot;Anchors&quot;:[{&quot;Text&quot;:&quot;備&quot;,&quot;Area&quot;:[253.39,234.99,3.73,4.8]},{&quot;Text&quot;:&quot;·&quot;,&quot;Area&quot;:[253.39,239.52,3.47,4.8]},{&quot;Text&quot;:&quot;件&quot;,&quot;Area&quot;:[253.13,248.86,3.73,5.07]},{&quot;Text&quot;:&quot;条&quot;,&quot;Area&quot;:[253.13,244.32,3.47,5.07]}]}]}]}},{&quot;DocumentTypeId&quot;:&quot;サイト検証用.NoCategory.賃料&quot;,&quot;FormId&quot;:&quot;75cc73c9&quot;,&quot;FormName&quot;:&quot;10_（株）ルアネクト_01&quot;,&quot;OriginalFileExtension&quot;:&quot;png&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,1348.0,4855.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;LUANECT&quot;,&quot;Box&quot;:[32.56,568.6,254.65,55.81]},{&quot;Text&quot;:&quot;RENT&quot;,&quot;Box&quot;:[112.79,322.09,50.0,19.77]},{&quot;Text&quot;:&quot;SALE&quot;,&quot;Box&quot;:[113.95,473.26,46.51,20.93]},{&quot;Text&quot;:&quot;SEEL&quot;,&quot;Box&quot;:[116.28,630.23,43.02,19.77]},{&quot;Text&quot;:&quot;COMPANY&quot;,&quot;Box&quot;:[116.28,751.16,104.65,20.93]},{&quot;Text&quot;:&quot;RECRUIT&quot;,&quot;Box&quot;:[115.12,915.12,88.37,23.26]},{&quot;Text&quot;:&quot;CONTACT&quot;,&quot;Box&quot;:[113.95,1059.3,101.16,22.09]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.築年月&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-8.6626,64.6183,118.6859,19.781],&quot;Target&quot;:{&quot;Text&quot;:&quot;築 年 月&quot;,&quot;Area&quot;:[1532.56,887.21,34.88,16.28]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.住所&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-7.3624,57.0929,536.0647,19.781],&quot;Target&quot;:{&quot;Text&quot;:&quot;住 所&quot;,&quot;Area&quot;:[1558.14,272.09,22.1,13.95]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.交通&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-8.6303,45.2244,540.0209,21.7591],&quot;Target&quot;:{&quot;Text&quot;:&quot;交 通&quot;,&quot;Area&quot;:[1582.56,270.93,24.42,15.12]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.賃料&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-7.739,61.0491,131.5436,21.7591],&quot;Target&quot;:{&quot;Text&quot;:&quot;賃 料&quot;,&quot;Area&quot;:[1606.98,272.09,22.1,13.95]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.管理費&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-6.3459,34.7804,135.4997,19.781],&quot;Target&quot;:{&quot;Text&quot;:&quot;管 理 費&quot;,&quot;Area&quot;:[1606.98,477.91,34.88,15.12]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.間取り&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-6.7175,51.1636,133.5216,20.77],&quot;Target&quot;:{&quot;Text&quot;:&quot;問 取&quot;,&quot;Area&quot;:[1656.98,272.09,22.09,12.79]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.設備条件&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-111.5818,51.2779,757.6117,222.5361],&quot;Target&quot;:{&quot;Text&quot;:&quot;設 備 条&quot;,&quot;Area&quot;:[1873.26,270.93,36.05,17.44]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.備考&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-65.3196,62.5044,743.765,132.5326],&quot;Target&quot;:{&quot;Text&quot;:&quot;備 考&quot;,&quot;Area&quot;:[2048.84,270.93,31.4,26.74]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.物件番号&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-9.9361,58.9056,311.5505,21.7591],&quot;Target&quot;:{&quot;Text&quot;:&quot;物 件 番 号&quot;,&quot;Area&quot;:[2125.58,269.77,48.83,25.58]},&quot;Anchors&quot;:[]}]}]}},{&quot;DocumentTypeId&quot;:&quot;サイト検証用.NoCategory.賃料&quot;,&quot;FormId&quot;:&quot;02bfab2a&quot;,&quot;FormName&quot;:&quot;10_（株）ルアネクト_02&quot;,&quot;OriginalFileExtension&quot;:&quot;png&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,1348.0,4198.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;LUANECT&quot;,&quot;Box&quot;:[30.0,569.0,251.0,57.0]},{&quot;Text&quot;:&quot;RENT&quot;,&quot;Box&quot;:[117.0,321.0,51.0,18.0]},{&quot;Text&quot;:&quot;SALE&quot;,&quot;Box&quot;:[117.0,475.0,48.0,22.0]},{&quot;Text&quot;:&quot;SEEL&quot;,&quot;Box&quot;:[119.0,628.0,47.0,20.0]},{&quot;Text&quot;:&quot;COMPANY&quot;,&quot;Box&quot;:[115.0,753.0,106.0,23.0]},{&quot;Text&quot;:&quot;RECRUIT&quot;,&quot;Box&quot;:[117.0,919.0,85.0,24.0]},{&quot;Text&quot;:&quot;CONTACT&quot;,&quot;Box&quot;:[116.0,1058.0,105.0,25.0]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.築年月&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-7.876,61.7497,86.2515,18.649],&quot;Target&quot;:{&quot;Text&quot;:&quot;築 年 月&quot;,&quot;Area&quot;:[924.0,888.0,33.0,14.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.住所&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-9.7304,73.1615,138.7017,20.9801],&quot;Target&quot;:{&quot;Text&quot;:&quot;住 所&quot;,&quot;Area&quot;:[948.0,273.0,21.0,14.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.交通&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-9.588,76.1582,171.3374,19.8145],&quot;Target&quot;:{&quot;Text&quot;:&quot;交 通&quot;,&quot;Area&quot;:[973.0,272.0,24.0,15.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.賃料&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-9.7768,70.8304,53.6158,22.1457],&quot;Target&quot;:{&quot;Text&quot;:&quot;賃 料&quot;,&quot;Area&quot;:[997.0,272.0,23.0,14.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.管理費&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-7.4457,67.3002,54.7813,18.649],&quot;Target&quot;:{&quot;Text&quot;:&quot;管 理 費&quot;,&quot;Area&quot;:[997.0,478.0,33.0,14.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.間取り&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-7.3267,74.8271,38.4635,18.649],&quot;Target&quot;:{&quot;Text&quot;:&quot;間 取&quot;,&quot;Area&quot;:[1047.0,272.0,22.0,14.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.設備条件&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-56.1149,59.1649,737.7999,113.0594],&quot;Target&quot;:{&quot;Text&quot;:&quot;設 備 条 件&quot;,&quot;Area&quot;:[1220.0,271.0,46.0,22.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.備考&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-85.0623,67.1649,736.6343,177.1652],&quot;Target&quot;:{&quot;Text&quot;:&quot;備 考&quot;,&quot;Area&quot;:[1369.0,273.0,26.0,22.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.物件番号&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-8.0658,64.3238,90.9137,17.4834],&quot;Target&quot;:{&quot;Text&quot;:&quot;物 件 番 号&quot;,&quot;Area&quot;:[1473.0,274.0,46.0,19.0]},&quot;Anchors&quot;:[]}]}]}},{&quot;DocumentTypeId&quot;:&quot;サイト検証用.NoCategory.賃料&quot;,&quot;FormId&quot;:&quot;7ee62a66&quot;,&quot;FormName&quot;:&quot;10_（株）ルアネクト_03&quot;,&quot;OriginalFileExtension&quot;:&quot;png&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,1348.0,4808.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;LUANECT&quot;,&quot;Box&quot;:[33.33,570.11,249.43,55.17]},{&quot;Text&quot;:&quot;RENT&quot;,&quot;Box&quot;:[114.94,325.29,47.13,20.69]},{&quot;Text&quot;:&quot;SALE&quot;,&quot;Box&quot;:[118.39,474.71,44.83,16.09]},{&quot;Text&quot;:&quot;SEEL&quot;,&quot;Box&quot;:[114.94,629.88,44.83,20.69]},{&quot;Text&quot;:&quot;COMPANY&quot;,&quot;Box&quot;:[113.79,756.32,101.15,21.84]},{&quot;Text&quot;:&quot;RECRUIT&quot;,&quot;Box&quot;:[114.94,913.79,89.66,25.29]},{&quot;Text&quot;:&quot;CONTACT&quot;,&quot;Box&quot;:[112.64,1057.47,103.45,24.14]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.築年月&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-8.0567,64.5714,122.3839,20.9801],&quot;Target&quot;:{&quot;Text&quot;:&quot;聚 年 月&quot;,&quot;Area&quot;:[1534.48,888.51,33.33,17.24]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.住所&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-6.0105,74.4971,518.6745,18.649],&quot;Target&quot;:{&quot;Text&quot;:&quot;住 所&quot;,&quot;Area&quot;:[1557.47,272.41,21.84,13.79]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.交通&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-16.0293,77.9938,514.0122,36.1324],&quot;Target&quot;:{&quot;Text&quot;:&quot;交 通&quot;,&quot;Area&quot;:[1590.8,272.41,21.84,13.79]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.賃料&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-8.5902,68.0943,114.2249,22.1457],&quot;Target&quot;:{&quot;Text&quot;:&quot;賃 料&quot;,&quot;Area&quot;:[1622.99,272.41,22.99,13.79]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.管理費&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-8.0153,55.3196,107.2316,22.1457],&quot;Target&quot;:{&quot;Text&quot;:&quot;管 理 費&quot;,&quot;Area&quot;:[1621.84,477.01,35.63,14.94]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.間取り&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-7.316,70.4049,121.2183,20.9801],&quot;Target&quot;:{&quot;Text&quot;:&quot;間 取&quot;,&quot;Area&quot;:[1672.41,272.41,20.7,12.64]},&quot;Anchors&quot;:[]},{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-98.028,70.441,743.6277,196.9797],&quot;Target&quot;:{&quot;Text&quot;:&quot;備 考&quot;,&quot;Area&quot;:[1972.41,271.26,27.59,22.99]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.設備条件&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-52.3584,57.796,733.1376,103.7349],&quot;Target&quot;:{&quot;Text&quot;:&quot;設 備 条 件&quot;,&quot;Area&quot;:[1821.84,271.26,52.88,22.99]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.備考&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-98.028,70.441,743.6277,196.9797],&quot;Target&quot;:{&quot;Text&quot;:&quot;備 考&quot;,&quot;Area&quot;:[1972.41,271.26,27.59,22.99]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.NoCategory.賃料.物件番号&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-8.5075,59.5365,284.3968,23.3112],&quot;Target&quot;:{&quot;Text&quot;:&quot;物 件 番 号&quot;,&quot;Area&quot;:[2081.61,271.26,51.73,21.84]},&quot;Anchors&quot;:[]}]}]}},{&quot;DocumentTypeId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報&quot;,&quot;FormId&quot;:&quot;1259fcc2&quot;,&quot;FormName&quot;:&quot;PNG01&quot;,&quot;OriginalFileExtension&quot;:&quot;png&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,1348.0,2345.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Shar&quot;,&quot;Box&quot;:[19.0,324.0,41.0,20.0]},{&quot;Text&quot;:&quot;Maison&quot;,&quot;Box&quot;:[20.0,365.0,55.0,19.0]},{&quot;Text&quot;:&quot;申&quot;,&quot;Box&quot;:[636.0,48.0,12.0,17.0]},{&quot;Text&quot;:&quot;込&quot;,&quot;Box&quot;:[636.0,61.0,12.0,16.0]},{&quot;Text&quot;:&quot;依&quot;,&quot;Box&quot;:[636.0,74.0,11.0,16.0]},{&quot;Text&quot;:&quot;頼&quot;,&quot;Box&quot;:[636.0,85.0,13.0,16.0]},{&quot;Text&quot;:&quot;周&quot;,&quot;Box&quot;:[1735.0,8.0,19.0,24.0]},{&quot;Text&quot;:&quot;辺&quot;,&quot;Box&quot;:[1735.0,32.0,19.0,24.0]},{&quot;Text&quot;:&quot;図&quot;,&quot;Box&quot;:[1734.0,81.0,18.0,25.0]},{&quot;Text&quot;:&quot;COPYRIGHTO&quot;,&quot;Box&quot;:[2318.0,722.0,83.0,18.0]},{&quot;Text&quot;:&quot;SEKISUIHOUSE&quot;,&quot;Box&quot;:[2318.0,807.0,94.0,19.0]},{&quot;Text&quot;:&quot;REAL&quot;,&quot;Box&quot;:[2318.0,903.0,32.0,19.0]},{&quot;Text&quot;:&quot;ESTATE&quot;,&quot;Box&quot;:[2318.0,938.0,46.0,19.0]},{&quot;Text&quot;:&quot;GROUP&quot;,&quot;Box&quot;:[2318.0,986.0,44.0,19.0]},{&quot;Text&quot;:&quot;RIGHTS&quot;,&quot;Box&quot;:[2318.0,1051.0,48.0,19.0]},{&quot;Text&quot;:&quot;RESERVED&quot;,&quot;Box&quot;:[2318.0,1101.0,67.0,19.0]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.所在地&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-17.616,106.7304,781.648,42.5107],&quot;Target&quot;:{&quot;Text&quot;:&quot;所 在 地&quot;,&quot;Area&quot;:[704.0,25.0,30.0,15.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.アクセス&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-20.9766,100.9878,792.6185,38.3967],&quot;Target&quot;:{&quot;Text&quot;:&quot;ア ク セ ス&quot;,&quot;Area&quot;:[748.0,20.0,46.0,16.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.家賃&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-18.7233,113.3591,796.7325,37.0254],&quot;Target&quot;:{&quot;Text&quot;:&quot;家 賃&quot;,&quot;Area&quot;:[791.0,21.0,22.0,16.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.間取り&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-20.1913,76.8591,813.1882,37.0254],&quot;Target&quot;:{&quot;Text&quot;:&quot;間 取 り / 間 取 詳 細&quot;,&quot;Area&quot;:[919.0,20.0,97.0,18.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.設備仕様&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-28.0992,94.4878,796.7325,61.7091],&quot;Target&quot;:{&quot;Text&quot;:&quot;設 備 · 仕 様&quot;,&quot;Area&quot;:[1358.0,19.0,61.0,17.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.入居諸条件&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-48.6328,91.6165,783.0193,105.591],&quot;Target&quot;:{&quot;Text&quot;:&quot;入 居 諸 条 件&quot;,&quot;Area&quot;:[1437.0,22.0,58.0,18.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.ライフライン&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-20.795,88.3969,979.1607,38.0417],&quot;Target&quot;:{&quot;Text&quot;:&quot;ラ イ フ ラ イ ン&quot;,&quot;Area&quot;:[1506.0,19.0,73.0,20.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.備考&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-45.1237,110.9878,798.1038,100.1058],&quot;Target&quot;:{&quot;Text&quot;:&quot;備 考&quot;,&quot;Area&quot;:[1663.0,21.0,24.0,17.0]},&quot;Anchors&quot;:[]}]}]}},{&quot;DocumentTypeId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報&quot;,&quot;FormId&quot;:&quot;c898bf8a&quot;,&quot;FormName&quot;:&quot;PNG06&quot;,&quot;OriginalFileExtension&quot;:&quot;png&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,1348.0,2298.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Shar&quot;,&quot;Box&quot;:[19.0,345.0,39.0,21.0]},{&quot;Text&quot;:&quot;Maison&quot;,&quot;Box&quot;:[19.0,384.0,57.0,22.0]},{&quot;Text&quot;:&quot;申&quot;,&quot;Box&quot;:[625.0,48.0,13.0,17.0]},{&quot;Text&quot;:&quot;込&quot;,&quot;Box&quot;:[624.0,61.0,13.0,17.0]},{&quot;Text&quot;:&quot;依&quot;,&quot;Box&quot;:[624.0,74.0,11.0,17.0]},{&quot;Text&quot;:&quot;頼&quot;,&quot;Box&quot;:[624.0,85.0,13.0,17.0]},{&quot;Text&quot;:&quot;COPYRIGHT&quot;,&quot;Box&quot;:[2271.0,720.0,77.0,19.0]},{&quot;Text&quot;:&quot;SEKISUIHOUSE&quot;,&quot;Box&quot;:[2271.0,807.0,92.0,19.0]},{&quot;Text&quot;:&quot;REAL&quot;,&quot;Box&quot;:[2271.0,902.0,33.0,19.0]},{&quot;Text&quot;:&quot;ESTATE&quot;,&quot;Box&quot;:[2271.0,938.0,44.0,19.0]},{&quot;Text&quot;:&quot;GROUP&quot;,&quot;Box&quot;:[2271.0,986.0,43.0,19.0]},{&quot;Text&quot;:&quot;ALL&quot;,&quot;Box&quot;:[2271.0,1032.0,16.0,19.0]},{&quot;Text&quot;:&quot;RIGHTS&quot;,&quot;Box&quot;:[2271.0,1051.0,46.0,19.0]},{&quot;Text&quot;:&quot;RESERVED&quot;,&quot;Box&quot;:[2271.0,1101.0,65.0,19.0]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.所在地&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-21.211,103.3969,807.146,47.9656],&quot;Target&quot;:{&quot;Text&quot;:&quot;所 在 地&quot;,&quot;Area&quot;:[693.0,25.0,31.0,16.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.アクセス&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-19.5534,100.2429,803.838,39.6957],&quot;Target&quot;:{&quot;Text&quot;:&quot;ア ク セ ス&quot;,&quot;Area&quot;:[736.0,19.0,46.0,16.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.家賃&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-23.3577,115.2049,783.9902,46.3117],&quot;Target&quot;:{&quot;Text&quot;:&quot;家 賃&quot;,&quot;Area&quot;:[779.0,21.0,22.0,17.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.間取り&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-22.1926,74.2429,783.9902,46.3117],&quot;Target&quot;:{&quot;Text&quot;:&quot;間 取 り / 間 取 詳 細&quot;,&quot;Area&quot;:[909.0,19.0,98.0,16.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.設備仕様&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-18.1938,93.8969,779.0282,36.3877],&quot;Target&quot;:{&quot;Text&quot;:&quot;設 備 · 仕 様&quot;,&quot;Area&quot;:[1339.0,20.0,60.0,18.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.入居諸条件&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-35.8442,90.089,808.8,66.1595],&quot;Target&quot;:{&quot;Text&quot;:&quot;入 居 諸 条 件&quot;,&quot;Area&quot;:[1398.0,22.0,57.0,18.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.ライフライン&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-17.9528,88.8969,805.492,44.6577],&quot;Target&quot;:{&quot;Text&quot;:&quot;ラ イ フ ラ イ ン&quot;,&quot;Area&quot;:[1459.0,20.0,70.0,19.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.備考&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-123.9554,90.9121,807.0642,97.9159],&quot;Target&quot;:{&quot;Text&quot;:&quot;周 辺 地 図&quot;,&quot;Area&quot;:[1688.0,7.0,91.0,25.0]},&quot;Anchors&quot;:[]}]}]}},{&quot;DocumentTypeId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報&quot;,&quot;FormId&quot;:&quot;fdc924e0&quot;,&quot;FormName&quot;:&quot;PNG09&quot;,&quot;OriginalFileExtension&quot;:&quot;png&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,1348.0,2442.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;SharMaison&quot;,&quot;Box&quot;:[18.0,379.0,97.0,21.0]},{&quot;Text&quot;:&quot;申&quot;,&quot;Box&quot;:[625.0,48.0,12.0,17.0]},{&quot;Text&quot;:&quot;込&quot;,&quot;Box&quot;:[625.0,60.0,14.0,17.0]},{&quot;Text&quot;:&quot;COPYRIGHTO&quot;,&quot;Box&quot;:[2416.0,722.0,82.0,17.0]},{&quot;Text&quot;:&quot;SEKISUIHOUSE&quot;,&quot;Box&quot;:[2415.0,808.0,92.0,19.0]},{&quot;Text&quot;:&quot;REAL&quot;,&quot;Box&quot;:[2415.0,902.0,34.0,19.0]},{&quot;Text&quot;:&quot;ESTATE&quot;,&quot;Box&quot;:[2415.0,938.0,46.0,19.0]},{&quot;Text&quot;:&quot;GROUP&quot;,&quot;Box&quot;:[2415.0,986.0,45.0,19.0]},{&quot;Text&quot;:&quot;RIGHTS&quot;,&quot;Box&quot;:[2415.0,1051.0,47.0,19.0]},{&quot;Text&quot;:&quot;RESERVED&quot;,&quot;Box&quot;:[2415.0,1100.0,66.0,19.0]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.所在地&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-19.5451,108.8793,804.097,41.5401],&quot;Target&quot;:{&quot;Text&quot;:&quot;所 在 地&quot;,&quot;Area&quot;:[694.0,19.0,37.0,14.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.アクセス&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-19.5269,101.9012,793.2175,40.551],&quot;Target&quot;:{&quot;Text&quot;:&quot;ア ク セ ス&quot;,&quot;Area&quot;:[736.0,20.0,45.0,17.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.家賃&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-19.9978,114.4012,808.0532,43.5182],&quot;Target&quot;:{&quot;Text&quot;:&quot;家 貨&quot;,&quot;Area&quot;:[780.0,19.0,22.0,15.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.間取り&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-19.4433,74.4231,807.0642,41.5401],&quot;Target&quot;:{&quot;Text&quot;:&quot;間 取 り / 間 取 詳 細&quot;,&quot;Area&quot;:[909.0,19.0,98.0,17.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.設備仕様&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-91.2069,94.4121,805.0861,185.9413],&quot;Target&quot;:{&quot;Text&quot;:&quot;設 備 · 仕 様&quot;,&quot;Area&quot;:[1411.0,18.0,62.0,17.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.入居諸条件&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-91.2069,94.4121,805.0861,185.9413],&quot;Target&quot;:{&quot;Text&quot;:&quot;設 備 · 仕 様&quot;,&quot;Area&quot;:[1411.0,18.0,62.0,17.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.ライフライン&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-21.6198,91.3793,798.1627,45.4963],&quot;Target&quot;:{&quot;Text&quot;:&quot;ラ イ フ ラ イ ン&quot;,&quot;Area&quot;:[1604.0,19.0,72.0,18.0]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;サイト検証用.共通01_Sekisuihouse.共通01_物件情報.備考&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-47.5435,111.8793,811.0204,104.8392],&quot;Target&quot;:{&quot;Text&quot;:&quot;請 考&quot;,&quot;Area&quot;:[1759.0,25.0,19.0,17.0]},&quot;Anchors&quot;:[]}]}]}},{&quot;DocumentTypeId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF&quot;,&quot;FormId&quot;:&quot;46bf918a&quot;,&quot;FormName&quot;:&quot;株式会社houseneoPDF&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,842.0,595.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;大東建託リーシング株式会社&quot;,&quot;Box&quot;:[530.52,110.72,193.02,15.98]},{&quot;Text&quot;:&quot;秋田県秋田市八橋三和町４番５号&quot;,&quot;Box&quot;:[551.05,165.41,128.88,8.99]},{&quot;Text&quot;:&quot;TEL&quot;,&quot;Box&quot;:[525.45,435.7,20.09,11.99]},{&quot;Text&quot;:&quot;018-866-8191&quot;,&quot;Box&quot;:[525.91,467.72,77.52,11.09]},{&quot;Text&quot;:&quot;秋田店&quot;,&quot;Box&quot;:[530.52,309.06,48.0,15.98]},{&quot;Text&quot;:&quot;FAX&quot;,&quot;Box&quot;:[545.29,435.7,21.55,11.99]},{&quot;Text&quot;:&quot;018-866-7810&quot;,&quot;Box&quot;:[545.75,467.72,77.52,11.09]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF.物件名&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-15.3209,-147.1244,65.5239,14.5609],&quot;Target&quot;:{&quot;Text&quot;:&quot;賃料&quot;,&quot;Area&quot;:[47.0,519.42,21.31,7.99]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF.部屋番号&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-7.0659,11.3171,24.7535,12.3767],&quot;Target&quot;:{&quot;Text&quot;:&quot;部屋番号*&quot;,&quot;Area&quot;:[54.49,382.63,62.46,9.99]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF.賃料&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-8.0405,115.6992,86.6371,18.9291],&quot;Target&quot;:{&quot;Text&quot;:&quot;賃料&quot;,&quot;Area&quot;:[47.0,519.42,21.31,7.99]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF.保険料&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-7.3409,29.7851,101.198,16.0169],&quot;Target&quot;:{&quot;Text&quot;:&quot;共益費&quot;,&quot;Area&quot;:[72.51,518.08,24.0,7.99]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF.契約一時金&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-16.937,27.601,260.6394,33.49],&quot;Target&quot;:{&quot;Text&quot;:&quot;契約一時金&quot;,&quot;Area&quot;:[147.63,510.08,40.0,7.99]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF.設備&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-23.11,26.8779,259.9114,43.6826],&quot;Target&quot;:{&quot;Text&quot;:&quot;設備&quot;,&quot;Area&quot;:[374.4,519.42,21.31,7.99]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会houseneoPDF.契約条件&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-10.7181,27.601,260.6394,20.3852],&quot;Target&quot;:{&quot;Text&quot;:&quot;契約条件&quot;,&quot;Area&quot;:[428.26,514.08,32.0,7.99]},&quot;Anchors&quot;:[]}]}]}},{&quot;DocumentTypeId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会社セレントライフ&quot;,&quot;FormId&quot;:&quot;6d7a18ed&quot;,&quot;FormName&quot;:&quot;ハイトスコーポレーション株式会社&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,1002.0,709.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;FOR&quot;,&quot;Box&quot;:[31.5,827.39,44.55,20.01]},{&quot;Text&quot;:&quot;RENT&quot;,&quot;Box&quot;:[31.5,886.61,71.49,20.01]},{&quot;Text&quot;:&quot;大東建託リーシング株式会社&quot;,&quot;Box&quot;:[609.63,129.0,234.0,21.1]},{&quot;Text&quot;:&quot;TEL:&quot;,&quot;Box&quot;:[645.44,129.0,29.57,16.41]},{&quot;Text&quot;:&quot;029-272-0981&quot;,&quot;Box&quot;:[645.44,158.57,87.16,16.41]},{&quot;Text&quot;:&quot;ひたちなか店&quot;,&quot;Box&quot;:[609.63,368.0,108.0,21.1]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会社セレントライフ.賃料&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-11.3777,38.0176,282.2019,23.4557],&quot;Target&quot;:{&quot;Text&quot;:&quot;賃料&quot;,&quot;Area&quot;:[73.39,632.0,16.0,9.38]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会社セレントライフ.間取り&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-9.189,41.0326,99.6869,17.5918],&quot;Target&quot;:{&quot;Text&quot;:&quot;間取り&quot;,&quot;Area&quot;:[95.39,807.5,24.0,9.38]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会社セレントライフ.建物名&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-8.0548,38.0176,282.2019,13.9268],&quot;Target&quot;:{&quot;Text&quot;:&quot;建物名&quot;,&quot;Area&quot;:[163.89,628.0,24.0,9.38]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会社セレントライフ.交通&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-11.7113,38.7505,280.7359,22.7228],&quot;Target&quot;:{&quot;Text&quot;:&quot;交通&quot;,&quot;Area&quot;:[217.39,632.0,16.0,9.38]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会社セレントライフ.設備&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-11.1469,37.2846,281.4689,20.5238],&quot;Target&quot;:{&quot;Text&quot;:&quot;設備&quot;,&quot;Area&quot;:[364.89,632.0,16.0,9.38]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会社セレントライフ.その他費用&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-27.9242,38.0176,280.7359,54.2414],&quot;Target&quot;:{&quot;Text&quot;:&quot;その他費用&quot;,&quot;Area&quot;:[404.39,620.0,40.0,9.38]},&quot;Anchors&quot;:[]}]},{&quot;FieldId&quot;:&quot;フォーム抽出器.株式会社houseneo.株式会社セレントライフ.備考&quot;,&quot;FieldDescriptors&quot;:[{&quot;PageIndexAtDesignTime&quot;:0,&quot;Offset&quot;:[-42.5043,36.5516,283.6679,84.2941],&quot;Target&quot;:{&quot;Text&quot;:&quot;備考&quot;,&quot;Area&quot;:[519.39,632.0,16.0,9.38]},&quot;Anchors&quot;:[]}]}]}}]" Timeout="100000">
+                  <p7:FormExtractor.DocumentBounds>
+                    <InArgument x:TypeArguments="p:ResultsDocumentBounds">
+                      <DelegateArgumentValue x:TypeArguments="p:ResultsDocumentBounds">
+                        <DelegateInArgument x:TypeArguments="p:ResultsDocumentBounds" Name="DocumentBounds" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p7:FormExtractor.DocumentBounds>
+                  <p7:FormExtractor.DocumentObjectModel>
+                    <InArgument x:TypeArguments="p5:Document">
+                      <DelegateArgumentValue x:TypeArguments="p5:Document">
+                        <DelegateInArgument x:TypeArguments="p5:Document" Name="DocumentObjectModel" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p7:FormExtractor.DocumentObjectModel>
+                  <p7:FormExtractor.DocumentPath>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p7:FormExtractor.DocumentPath>
+                  <p7:FormExtractor.DocumentText>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p7:FormExtractor.DocumentText>
+                  <p7:FormExtractor.ExtractorDocumentType>
+                    <InArgument x:TypeArguments="p8:ExtractorDocumentType">
+                      <DelegateArgumentValue x:TypeArguments="p8:ExtractorDocumentType">
+                        <DelegateInArgument x:TypeArguments="p8:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p7:FormExtractor.ExtractorDocumentType>
+                  <p7:FormExtractor.ExtractorResult>
+                    <OutArgument x:TypeArguments="p8:ExtractorResult">
+                      <DelegateArgumentReference x:TypeArguments="p8:ExtractorResult">
+                        <DelegateOutArgument x:TypeArguments="p8:ExtractorResult" Name="ExtractorResult" />
+                      </DelegateArgumentReference>
+                    </OutArgument>
+                  </p7:FormExtractor.ExtractorResult>
+                  <p7:FormExtractor.PredictionId>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p7:FormExtractor.PredictionId>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </p7:FormExtractor>
+                <p9:MachineLearningExtractor SelectedMLSkill="{x:Null}" ApiKey="[strAPIkey]" Configuration="{}{&quot;Endpoint&quot;:&quot;&quot;,&quot;ApiKey&quot;:&quot;F6DnPN7V3jAanEPNPWzsBYf37kms+vX7ZLkJWLn/t6Cfx3KqTRLAadYdDeVuJeR1cu+a5uSEPgJJ63aTVqHYKQ==&quot;,&quot;SelectedMLSkill&quot;:&quot;Daito_02&quot;,&quot;AvailableMLSkills&quot;:[&quot;Daito_01&quot;,&quot;Daito_02&quot;]}" DisplayName="マシン ラーニング抽出器" Endpoint="エンドポイントのURL（AICenterから）" sap:VirtualizedContainerService.HintSize="233.6,208" sap2010:WorkflowViewState.IdRef="MachineLearningExtractor_3" PersistenceId="UI545c3377a1884defb3e205e92ae87c8c" RetryOnFailure="True" Timeout="100000" UseServerSideOCR="False">
+                  <p9:MachineLearningExtractor.AvailableMLSkills>
+                    <scg:List x:TypeArguments="x:String" Capacity="2">
+                      <x:String>Daito_02</x:String>
+                      <x:String>ML_DU_Japan_Invoice</x:String>
+                    </scg:List>
+                  </p9:MachineLearningExtractor.AvailableMLSkills>
+                  <p9:MachineLearningExtractor.DocumentBounds>
+                    <InArgument x:TypeArguments="p:ResultsDocumentBounds">
+                      <DelegateArgumentValue x:TypeArguments="p:ResultsDocumentBounds">
+                        <DelegateInArgument x:TypeArguments="p:ResultsDocumentBounds" Name="DocumentBounds" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p9:MachineLearningExtractor.DocumentBounds>
+                  <p9:MachineLearningExtractor.DocumentObjectModel>
+                    <InArgument x:TypeArguments="p5:Document">
+                      <DelegateArgumentValue x:TypeArguments="p5:Document">
+                        <DelegateInArgument x:TypeArguments="p5:Document" Name="DocumentObjectModel" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p9:MachineLearningExtractor.DocumentObjectModel>
+                  <p9:MachineLearningExtractor.DocumentPath>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p9:MachineLearningExtractor.DocumentPath>
+                  <p9:MachineLearningExtractor.DocumentText>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p9:MachineLearningExtractor.DocumentText>
+                  <p9:MachineLearningExtractor.ExtractorDocumentType>
+                    <InArgument x:TypeArguments="p8:ExtractorDocumentType">
+                      <DelegateArgumentValue x:TypeArguments="p8:ExtractorDocumentType">
+                        <DelegateInArgument x:TypeArguments="p8:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p9:MachineLearningExtractor.ExtractorDocumentType>
+                  <p9:MachineLearningExtractor.ExtractorResult>
+                    <OutArgument x:TypeArguments="p8:ExtractorResult">
+                      <DelegateArgumentReference x:TypeArguments="p8:ExtractorResult">
+                        <DelegateOutArgument x:TypeArguments="p8:ExtractorResult" Name="ExtractorResult" />
+                      </DelegateArgumentReference>
+                    </OutArgument>
+                  </p9:MachineLearningExtractor.ExtractorResult>
+                  <p9:MachineLearningExtractor.PredictionId>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p9:MachineLearningExtractor.PredictionId>
+                </p9:MachineLearningExtractor>
+              </p7:DataExtractionScope.Extractors>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p7:DataExtractionScope>
+            <ui:CommentOut sap2010:Annotation.AnnotationText="日本語読み込みの際、半角スペースが無駄に入るケースがあるため（2023/12時点）" DisplayName="コメント アウト：スペース除去するためのロジック" sap:VirtualizedContainerService.HintSize="803.2,1200.8" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="無視されたアクティビティ" sap:VirtualizedContainerService.HintSize="768,1091.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ForEach x:TypeArguments="p:ResultsDataPoint" CurrentIndex="{x:Null}" DisplayName="繰り返し (コレクションの各要素)_半角スペース除去" sap:VirtualizedContainerService.HintSize="705.6,979.2" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[extractionResults.ResultsDocument.Fields]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="p:ResultsDataPoint">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="p:ResultsDataPoint" Name="currentItem" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="670.4,854.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If sap2010:Annotation.AnnotationText="半角スペース除去するアイテムが該当するようにConditionを入れる。&#xA;対象アイテム一覧についてはConfigファイルに持つようにする？&#xA;&#xA;（現在の条件は（仮）で全部該当するようにしてある）" Condition="[currentItem.FieldName &lt;&gt;&quot;&quot;]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="608,742.4" sap2010:WorkflowViewState.IdRef="If_2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="574.4,483.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:Int32" Name="int_候補" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ForEach x:TypeArguments="x:Object" sap2010:Annotation.AnnotationText="抽出結果は0（＝候補なし）～複数個（＝複数候補）の値をとるため、その回数分だけスペーストリミングの式を入れる必要があるため、配置&#xA;※" CurrentIndex="[int_候補]" DisplayName="繰り返し (コレクションの各要素)" sap:VirtualizedContainerService.HintSize="531.2,393.6" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[currentItem.Values]">
+                                  <ui:ForEach.Body>
+                                    <ActivityAction x:TypeArguments="x:Object">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem2" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="496,224.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign sap2010:Annotation.AnnotationText="" DisplayName="代入" sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[currentItem.Values(int_候補).Value]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[currentItem.Values(int_候補).Value.ToString.Replace(" ","")]</InArgument>
+                                          </Assign.Value>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Assign>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEach.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:ForEach>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="400,104.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                  </ui:ForEach>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:IfElseIf DisplayName="条件分岐 (else if)" sap:VirtualizedContainerService.HintSize="803.2,2201.6" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+              <ui:IfElseIf.ConditionBlocks>
+                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                  <ui:IfElseIfBlock BlockType="If" Condition="[str_抽出器環境=&quot;ローカル&quot;]">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="449.6,659.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <p1:PresentValidationStation AutomaticExtractionResults="[extractionResults]" DisplayName="検証ステーションを提示" DocumentObjectModel="[dom]" DocumentPath="[CurrentFile.FullName]" DocumentText="[strDocumentText]" sap:VirtualizedContainerService.HintSize="387.2,372" sap2010:WorkflowViewState.IdRef="PresentValidationStation_1" ShowOnlyRelevantPageRange="False" Taxonomy="[taxonomy]" ValidatedExtractionResults="[extractionValidatedResults]" />
+                        <uasa:AppendItemToList x:TypeArguments="p:ExtractionResult" ItemIndex="{x:Null}" DisplayName="リストに項目を追加" sap:VirtualizedContainerService.HintSize="387.2,135.2" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_6" ItemToAppend="[extractionValidatedResults]" List="[IlistExtractionValidatedResults]" />
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                  <ui:IfElseIfBlock BlockType="Else">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="547.2,1310.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <p1:CreateDocumentValidationAction ActionCatalog="{x:Null}" FolderPath="{x:Null}" TimeoutMs="{x:Null}" ActionOutput="[ActionResult]" ActionPriority="Medium" ActionTitle="[&quot;ドキュメント検証：&quot;+CurrentFile.Name]" sap2010:Annotation.AnnotationText="OCで事前設定が必要&#xA;（必須）ストレージバケット&#xA;（オプション）アクションカタログの作成&#xA;&#xA;アクションフォルダパス、バケットディレクトリパスはフォルダ名を入れる&#xA;※Studio実行の場合は右下で対象のモダンフォルダに設定する" AutomaticExtractionResults="[extractionResults]" BucketFolderPath="DU検証" BucketName="検証用ストレージバケット" DisplayName="ドキュメント検証アクションを作成" DocumentObjectModel="[dom]" DocumentPath="[CurrentFile.FullName]" DocumentText="[strDocumentText]" sap:VirtualizedContainerService.HintSize="484.8,480" sap2010:WorkflowViewState.IdRef="CreateDocumentValidationAction_1" RetryOnFailure="True" ShowOnlyRelevantPageRange="False" Taxonomy="[taxonomy]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </p1:CreateDocumentValidationAction>
+                        <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="484.8,503.2" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="無視されたアクティビティ" sap:VirtualizedContainerService.HintSize="449.6,424.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <upat:AssignTasks FailedTaskAssignments="{x:Null}" TaskUserAssignments="{x:Null}" TimeoutMs="{x:Null}" sap2010:Annotation.AnnotationText="ActionCenterでタスク割り当てを自動化する用" DisplayName="タスクを割り当て" EnableMultipleAssignments="False" sap:VirtualizedContainerService.HintSize="387.2,312.8" sap2010:WorkflowViewState.IdRef="AssignTasks_2" MigrateV144="False" TaskAssignmentType="[TaskAssignmentType.Assign]" TaskId="[Cint(ActionResult.Id)]" UserNameOrEmail=" ">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </upat:AssignTasks>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <uasa:AppendItemToList x:TypeArguments="p1:DocumentValidationActionData" ItemIndex="{x:Null}" DisplayName="リストに項目を追加" sap:VirtualizedContainerService.HintSize="484.8,135.2" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_4" ItemToAppend="[ActionResult]" List="[IlstActionResult]" />
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                </sc:BindingList>
+              </ui:IfElseIf.ConditionBlocks>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:IfElseIf>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachFileX.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachFileX>
+    <ui:IfElseIf DisplayName="条件分岐 (else if)" sap:VirtualizedContainerService.HintSize="899.2,3060.8" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+      <ui:IfElseIf.ConditionBlocks>
+        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+          <ui:IfElseIfBlock BlockType="If" Condition="[str_抽出器環境=&quot;ローカル&quot;]">
+            <ui:IfElseIfBlock.Then>
+              <ParallelForEach x:TypeArguments="p:ExtractionResult" sap2010:Annotation.AnnotationText="並列繰り返しにすることにより、配列の順序に関係なく処理された検証アクションから処理再開可能（普通の繰り返しでは、配列順に処理するため、非効率）" DisplayName="ParallelForEach&lt;ExtractionResult&gt;" sap:VirtualizedContainerService.HintSize="596.8,1212" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_2" Values="[IlistExtractionValidatedResults]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="p:ExtractionResult">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="p:ExtractionResult" Name="extractionValidatedResults" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="547.2,1019.2" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p7:ExportExtractionResults sap2010:Annotation.AnnotationText="抽出結果をDataSetという変数に変換する&#xA;&#xA;DataSetはDataTableとは異なる。DatatTableが複数リスト化された変数だが、実質1つ（Indexは０）しか出力されない&#xA;&#xA;Include Confidenceは結果の自信度を出力するデータテーブルに含めるかのオプション設定項目だが、人間が検証する以上あまり意味をなさない？（常に100％になる）" DataSet="[dataset_extractions]" DisplayName="抽出結果をエクスポート" ExtractionResult="[extractionValidatedResults]" sap:VirtualizedContainerService.HintSize="484.8,316.8" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_5" IncludeConfidence="False" IncludeOCRConfidence="False">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p7:ExportExtractionResults>
+                    <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="484.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strOutputFileName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">["Data\Output\"+Now.ToString("yyyyMMddHHmmss") + ".xlsx"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:ForEach x:TypeArguments="sd2:DataTable" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Datatableが2セットあるが、0番目と1番目の内容に差はない（現時点で確認する限り）ので、繰り返しを使わずに、「dataset_extractions.Tables(0)」を直接出力したほうがシンプル&#xA;0番目のDatatable：Simple Fields&#xA;1番目のDatatable：Simple Fields - Formatted" DisplayName="繰り返し (コレクションの各要素)" sap:VirtualizedContainerService.HintSize="484.8,428.8" sap2010:WorkflowViewState.IdRef="ForEach`1_18" Values="[dataset_extractions.Tables]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="sd2:DataTable">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd2:DataTable" Name="table" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="449.6,228" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[table]" DisplayName="範囲に書き込み (ワークブック)" sap:VirtualizedContainerService.HintSize="387.2,116" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="[table.TableName]" WorkbookPath="[strOutputFileName]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEach>
+                  </Sequence>
+                </ActivityAction>
+              </ParallelForEach>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="Else">
+            <ui:IfElseIfBlock.Then>
+              <ParallelForEach x:TypeArguments="p1:DocumentValidationActionData" sap2010:Annotation.AnnotationText="並列繰り返しにすることにより、配列の順序に関係なく処理された検証アクションから処理再開可能（普通の繰り返しでは、配列順に処理するため、非効率）" DisplayName="並列繰り返し (コレクションの各要素)" sap:VirtualizedContainerService.HintSize="596.8,1616.8" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_1" Values="[IlstActionResult]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="p1:DocumentValidationActionData">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="p1:DocumentValidationActionData" Name="ActionResult" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="547.2,1424" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p1:WaitForDocumentValidationActionAndResume AutomaticExtractionResults="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" DownloadFolderPath="{x:Null}" StatusMessage="{x:Null}" Taxonomy="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" ActionInput="[ActionResult]" ActionOutput="[ActionResult]" DisplayName="ドキュメント検証アクション完了まで待機し再開" sap:VirtualizedContainerService.HintSize="484.8,364.8" sap2010:WorkflowViewState.IdRef="WaitForDocumentValidationActionAndResume_3" RemoveDataFromStorage="True" RetryOnFailure="True" ValidatedExtractionResults="[extractionValidatedResults]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p1:WaitForDocumentValidationActionAndResume>
+                    <p7:ExportExtractionResults sap2010:Annotation.AnnotationText="抽出結果をDataSetという変数に変換する&#xA;&#xA;DataSetはDataTableとは異なる。DatatTableが複数リスト化された変数だが、実質1つ（Indexは０）しか出力されない&#xA;&#xA;Include Confidenceは結果の自信度を出力するデータテーブルに含めるかのオプション設定項目だが、人間が検証する以上あまり意味をなさない？（常に100％になる）" DataSet="[dataset_extractions]" DisplayName="抽出結果をエクスポート" ExtractionResult="[extractionValidatedResults]" sap:VirtualizedContainerService.HintSize="484.8,316.8" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_3" IncludeConfidence="False" IncludeOCRConfidence="False">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p7:ExportExtractionResults>
+                    <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="484.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strOutputFileName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">["Data\Output\"+Now.ToString("yyyyMMddHHmmss") + ".xlsx"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:ForEach x:TypeArguments="sd2:DataTable" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Datatableが2セットあるが、0番目と1番目の内容に差はない（現時点で確認する限り）ので、繰り返しを使わずに、「dataset_extractions.Tables(0)」を直接出力したほうがシンプル&#xA;0番目のDatatable：Simple Fields&#xA;1番目のDatatable：Simple Fields - Formatted" DisplayName="繰り返し (コレクションの各要素)" sap:VirtualizedContainerService.HintSize="484.8,428.8" sap2010:WorkflowViewState.IdRef="ForEach`1_20" Values="[dataset_extractions.Tables]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="sd2:DataTable">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd2:DataTable" Name="table" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="449.6,228" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[table]" DisplayName="範囲に書き込み (ワークブック)" sap:VirtualizedContainerService.HintSize="387.2,116" sap2010:WorkflowViewState.IdRef="WriteRange_6" SheetName="[table.TableName]" WorkbookPath="[strOutputFileName]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEach>
+                  </Sequence>
+                </ActivityAction>
+              </ParallelForEach>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+        </sc:BindingList>
+      </ui:IfElseIf.ConditionBlocks>
+    </ui:IfElseIf>
+  </Sequence>
+</Activity>

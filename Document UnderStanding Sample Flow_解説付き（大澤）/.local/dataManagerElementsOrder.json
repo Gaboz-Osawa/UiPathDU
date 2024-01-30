@@ -1,0 +1,72 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "タスクモニタリング.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "タスクオブジェクト&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "taxonomy&Sequence_1",
+        "strAPIkey&Sequence_1",
+        "IlistExtractionValidatedResults&Sequence_1",
+        "IlstActionResult&Sequence_1",
+        "strOutputFileName&Sequence_1",
+        "ExtractionValidatedResults&Sequence_1",
+        "dataset_extractions&Sequence_1",
+        "ActionResult&Sequence_1",
+        "strDocumentText&Sequence_1",
+        "str_抽出器環境&Sequence_1",
+        "dom&Sequence_2",
+        "classficationResults&Sequence_2",
+        "extractionResults&Sequence_2",
+        "classficationValidatedResults&Sequence_2",
+        "int_PDFpages&Sequence_2",
+        "int_候補&Sequence_8"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main - コピー (1).xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dom&Sequence_2",
+        "int_PDFpages&Sequence_2",
+        "taxonomy&Sequence_1",
+        "strDocumentText&Sequence_1",
+        "str_抽出器環境&Sequence_1",
+        "ExtractionValidatedResults&Sequence_1",
+        "dataset_extractions&Sequence_1",
+        "ActionResult&Sequence_1",
+        "IlstActionResult&Sequence_1",
+        "IlistExtractionValidatedResults&Sequence_1",
+        "strOutputFileName&Sequence_1",
+        "strAPIkey&Sequence_1",
+        "classficationResults&Sequence_2",
+        "extractionResults&Sequence_2",
+        "classficationValidatedResults&Sequence_2",
+        "int_候補&Sequence_8"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
